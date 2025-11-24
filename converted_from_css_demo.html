@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Converted CSS → HTML Demo</title>
+<!-- Link to uploaded CSS files (local paths provided by you) -->
+<link rel="stylesheet" href="/mnt/data/admin-menu-rtl.css" />
+<link rel="stylesheet" href="/mnt/data/code-editor.css" />
+<!-- Optional: include minified versions instead by swapping paths above -->
+<style>
+/* Small page reset to make demo neat */
+body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin: 0; background: #f5f7f8; color: #202124; }
+.container { display: flex; min-height: 100vh; }
+.sidebar { width: 220px; background: #1d2327; padding: 12px; box-sizing: border-box; }
+.content { flex: 1; padding: 24px; }
+.header { margin-bottom: 16px; }
+.card { background: #fff; border-radius: 8px; padding: 16px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+.code-sample { margin-top: 12px; }
+.CodeMirror { min-height: 160px; padding: 12px; border: 1px solid #e3e6e8; border-radius: 6px; background: #ffffff; }
+</style>
+</head>
+<body>
+<div class="container">
+	<!-- Admin menu demo using classes referenced in the CSS -->
+	<aside class="sidebar" id="adminmenuwrap">
+		<nav id="adminmenu" role="navigation">
+			<ul>
+				<li class="menu-top current">
+					<a class="menu-top" href="#"><div class="wp-menu-image"><img alt="" src="#" /></div><div class="wp-menu-name">Dashboard</div></a>
+				</li>
+				<li class="menu-top wp-has-submenu">
+					<a class="menu-top wp-has-submenu" href="#"><div class="wp-menu-image"></div><div class="wp-menu-name">Posts</div></a>
+					<ul class="wp-submenu">
+						<li><a href="#">All Posts</a></li>
+						<li><a href="#">Add New</a></li>
+						<li><a href="#">Categories</a></li>
+					</ul>
+				</li>
+				<li class="menu-top">
+					<a class="menu-top" href="#"><div class="wp-menu-image"></div><div class="wp-menu-name">Media</div></a>
+				</li>
+				<li class="menu-top">
+					<a class="menu-top" href="#"><div class="wp-menu-image"></div><div class="wp-menu-name">Pages</div></a>
+				</li>
+			</ul>
+			<button id="collapse-button" aria-expanded="true">
+				<span class="collapse-button-label">Collapse menu</span>
+				<span class="collapse-button-icon" aria-hidden="true"></span>
+			</button>
+		</nav>
+	</aside>
+
+	<main class="content" id="wpcontent">
+		<header class="header">
+			<h1>Converted CSS → HTML Demo</h1>
+			<p class="muted">This page links to your uploaded CSS files and shows a simple demo of the admin menu and code editor styles.</p>
+		</header>
+
+		<section class="card">
+			<h2>Admin Menu (RTL / LTR styles)</h2>
+			<p>The left sidebar uses styles from <code>admin-menu-rtl.css</code>. Toggle classes in your inspector (for example, add <code>folded</code> or <code>auto-fold</code>) to see responsive behaviors.</p>
+		</section>
+
+		<section class="card code-sample">
+			<h2>Code Editor Preview</h2>
+			<p>The box below uses <code>.CodeMirror</code> styles from <code>code-editor.css</code>.</p>
+			<div class="CodeMirror" role="region" aria-label="Code sample">
+<pre><code>// Example JavaScript
+function hello(name) {
+    console.log("Hello, " + name + "!")
+}
+
+hello("World");
+</code></pre>
+			</div>
+		</section>
+	</main>
+</div>
+</body>
+</html>
